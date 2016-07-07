@@ -1,0 +1,5 @@
+[OpenStack-M]
+name=OpenStack-Mitaka
+baseurl=http://mirrors.aliyun.com/centos/7/cloud/x86_64/openstack-mitaka/
+gpgcheck=0
+enabled=1

@@ -1,0 +1,3 @@
+dev:
+  '*':
+    - openstack.basic

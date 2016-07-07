@@ -1,0 +1,5 @@
+[glusterfs-3.7]
+name=glusterfs
+baseurl=http://mirrors.aliyun.com/centos/7/storage/x86_64/gluster-3.7/
+gpgcheck=0
+enabled=1
