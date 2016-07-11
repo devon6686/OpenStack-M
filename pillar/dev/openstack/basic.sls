@@ -1,21 +1,21 @@
 basic:
   mariadb:
-    HOST: controller
+    HOST: node-11
 
   mongod:
-    HOST: controller
+    HOST: node-11
 
   rabbitmq:
-    HOST: controller
+    HOST: node-11
     USER: openstack
     PASS: EiYiuPechooroh7x
 
   nova:
     CONTROLLER:
       HOST:
-        controller: 10.0.0.1
+        node-11: 172.16.100.11
     COMPUTES:
       HOST:
-        controller: 10.0.0.1
-        node2: 10.0.0.2
+        node-11: 172.16.100.11
+        node-12: 172.16.100.12
 
