@@ -1,10 +1,11 @@
-{% set CONTROLLER=salt['pillar.get']{'basic:nova:CONTROLLER:HOST'} %}
-{% if grains['host'] in CONTROLLER.keys() %}
+{% set HOST = salt['pillar.get']('basic:nova:CONTROLLER:HOST') -%}
+{% set HOSTNAME = grains['host'] -%}
+{% if HOSTNAME in HOST -%}
 server ntp.shu.edu.cn iburst
 #server 0.centos.pool.ntp.org iburst
-{% else %}
+{% else -%}
 server  {{ CONTROLLER }}  iburst
-{% endif %}
+{% endif -%}
 
 stratumweight 0
 driftfile /var/lib/chrony/drift

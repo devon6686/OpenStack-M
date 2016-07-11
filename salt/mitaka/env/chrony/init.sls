@@ -11,13 +11,13 @@ chrony:
 /etc/chrony.conf:
   file.managed:
     - source: salt://mitaka/env/chrony/templates/chrony.conf.template
+    - template: jinja
     - mode: 644
     - defaults:
-{% set CONTROLLER = salt['pillar.get']('basic:nova:CONTROLLER:HOST')%}
-      CONTROLLER: {{ CONTROLLER.keys() }}
+      CONTROLLER: {{ salt['pillar.get']('basic:mariadb:HOST') }}
 
 time-sync:
   cmd.run:
-    - name: chrony sources
+    - name: chronyc sources
     - require:
       - service: chronyd
